@@ -48,6 +48,11 @@ var TrackCollection = Backbone.Collection.extend({
 
 });
 
+var Fire = Backbone.Model.extend({});
 
+var FireCollection = Backbone.Firebase.Collection.extend({
+	url: "https://tiy-intro-tawni.firebaseio.com/collections/fire",
+	model: Fire
+});
 
 
