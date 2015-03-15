@@ -22,7 +22,6 @@ var Router = Backbone.Router.extend ({
 		$(".header").html( this.headerView.render().el );
 		//$(".main").html( this.categoryNavView .render().el );
 		$(".main-container").html(this.tracksView.el);
-		this.loadGenre("electronic");
 
 		$(".play-show" ).css( "display", "block" );
 		$(".pause-show" ).css( "display", "none" );
@@ -54,12 +53,21 @@ var Router = Backbone.Router.extend ({
 		this.listenTo(this.searchView, "search:data", function(options) {
 			this.search(options.data);
 		});
+
 	},
 
 	loadGenre: function(genre) {
+		if (genre === null) {
+			this.tracks.loadGenre("electronic");
+		} else {
 		this.tracks.loadGenre(genre);
+		}
 	},
 	search: function(query) {
+		if (query === null) {
+			this.tracks.search("yeah yeah yeahs");
+		} else {
 		this.tracks.search(query);
+		}
 	}
 });

@@ -101,11 +101,24 @@ var TrackCollectionView = Backbone.View.extend ({
 });
 
 var HeaderView = Backbone.View.extend({
+	events : {
+      
+      "click .eye": "eyeClick",
+      "click .txt": "txtClick"
+  },
   template: JST["header"],
   render: function() {
     this.$el.html(this.template());
     return this;
+  },
+
+  eyeClick: function() {
+  	$(".box").children('img').css( "display", "block" );
+  },
+  txtClick: function() {
+  $(".box").children('img').css( "display", "none" );
   }
+
 });
 
 var CategoryNavView = Backbone.View.extend({
@@ -152,3 +165,4 @@ var SearchView = Backbone.View.extend({
 
 	
 });
+

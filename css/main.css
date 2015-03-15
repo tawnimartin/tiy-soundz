@@ -17,6 +17,20 @@ html {
   margin-left: 36px;
   float: left;
 }
+.view-btns {
+  float: right;
+  font-size: 22px;
+  height: 30px;
+  margin-top: 32px;
+}
+.view-btns .glyph {
+  float: left;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.view-btns .glyph:hover {
+  color: #32cb84;
+}
 .fa-search {
   font-size: 40px;
   float: left;
@@ -65,6 +79,11 @@ form input#search {
   border-radius: 3px;
   border-bottom-right-radius: 0.5em;
   overflow: hidden;
+  cursor: pointer;
+}
+.box img {
+  width: 200px;
+  display: none;
 }
 .buttons {
   border-bottom-right-radius: 0.5em;

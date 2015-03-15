@@ -1,6 +1,6 @@
 this["JST"] = this["JST"] || {};
 this["JST"]["header"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"logo\">SOUNDZ</div>\n  <div class=\"search\">\n  </div>";
+    return " <div class=\"view-btns\">\n  	<div class=\"glyph\"><span class=\"glyph-item mega eye\" aria-hidden=\"true\" data-icon=\"&#xe087;\" data-js-prompt=\"&amp;#xe005;\"></span>\n  	</div>\n  	<div class=\"glyph\"><span class=\"glyph-item mega txt\" aria-hidden=\"true\" data-icon=\"&#xe067;\" data-js-prompt=\"&amp;#xe005;\"></span>\n  	</div>\n  </div><div class=\"logo\">SOUNDZ</div>\n  <div class=\"search\">\n  </div>";
 },"useData":true});
 this["JST"] = this["JST"] || {};
 this["JST"]["search"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -10,7 +10,9 @@ this["JST"] = this["JST"] || {};
 this["JST"]["search_box"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
 
-  return "<div class=\"box\">\n      <div class=\"genre\">"
+  return "<div class=\"box\"><img src=\""
+    + alias3(((helper = (helper = helpers.artwork_url || (depth0 != null ? depth0.artwork_url : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"artwork_url","hash":{},"data":data}) : helper)))
+    + "\">\n      <div class=\"genre\">"
     + alias3(((helper = (helper = helpers.genre || (depth0 != null ? depth0.genre : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"genre","hash":{},"data":data}) : helper)))
     + "</div>\n      <div class=\"title\">"
     + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"title","hash":{},"data":data}) : helper)))
