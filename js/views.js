@@ -113,10 +113,14 @@ var HeaderView = Backbone.View.extend({
   },
 
   eyeClick: function() {
-  	$(".box").children('img').css( "display", "block" );
+  	$el = $(".box").children('img')
+
+  		$el.show("slow");
   },
   txtClick: function() {
-  $(".box").children('img').css( "display", "none" );
+  	$el = $(".box").children('img')
+
+  	$el.hide("slow");
   }
 
 });
