@@ -64,6 +64,7 @@ form input#search {
   margin: 12px;
   border-radius: 3px;
   border-bottom-right-radius: 0.5em;
+  overflow: hidden;
 }
 .buttons {
   border-bottom-right-radius: 0.5em;
@@ -85,6 +86,7 @@ form input#search {
   line-height: 30px;
   padding-left: 13px;
   opacity: 1.0;
+  text-transform: lowercase;
 }
 .box .buttons {
   overflow: auto;
@@ -104,6 +106,20 @@ form input#search {
   font-weight: 300;
   text-align: center;
   cursor: pointer;
+  overflow: hidden;
+}
+.pause-hide {
+  display: none;
+}
+.pause-show {
+  display: block;
+}
+.play-hide {
+  display: none;
+}
+.play-show {
+  display: block;
+  margin-bottom: 18px;
 }
 .buttons .play:hover {
   background-color: #855d54;

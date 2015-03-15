@@ -1,6 +1,18 @@
 var TrackView = Backbone.View.extend({
 
 	template: 	JST["search_box"],
+	events : {
+      
+      "click .play" : "buttonClick"
+  },
+
+
+  initialize: function() {
+
+    this.listenTo(this.model, "stream:playing",     this.playing);
+    this.listenTo(this.model, "stream:paused",    this.paused);
+
+  },
 
 	render: function() {
 
@@ -30,13 +42,41 @@ var TrackView = Backbone.View.extend({
 
 	shortenTitle: function(title) {
 		
-   		if (title.length > 29) {
+   	if (title.length > 29) {
       return title.substring(0,29)+'...';
    		} else {
   		return title
 		};
 		return title;
 		console.log(title);
+	},
+
+	paused: function() {
+
+		var parent = this.$(".play").children();
+		parent.children( ".play-show" ).css( "display", "block" );
+		parent.children( ".pause-show" ).css( "display", "none" );
+  },
+
+  playing: function() {
+
+		var parent = this.$(".play").children();
+		parent.children( ".play-show" ).css( "display", "none" );
+		parent.children( ".pause-show" ).css( "display", "block" );
+  },
+
+	buttonClick: function(e) {
+		e.preventDefault();
+
+		$btn = $(e.currentTarget);
+
+    if( $btn.children().children( ".play-show" ).css( "display") == "block" ) {
+      this.model.play();
+    }
+    else if ( $btn.children().children( ".pause-show" ).css( "display") == "block" ) {
+      this.model.pause();
+    }
+
 	}
 
 });

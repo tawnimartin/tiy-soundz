@@ -22,6 +22,10 @@ var Router = Backbone.Router.extend ({
 		$(".header").html( this.headerView.render().el );
 		//$(".main").html( this.categoryNavView .render().el );
 		$(".main-container").html(this.tracksView.el);
+
+		$(".play-show" ).css( "display", "block" );
+		$(".pause-show" ).css( "display", "none" );
+
 		$(".search").append(this.searchView.render().el);
 
 		//listeners
