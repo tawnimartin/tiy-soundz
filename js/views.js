@@ -6,6 +6,7 @@ var TrackView = Backbone.View.extend({
 
 		var data = this.model.toJSON();
 		data.duration = this.formatDuration(data.duration);
+		data.title = this.shortenTitle(data.title);
 		this.$el.html (
 			this.template( data )
 		);
@@ -25,6 +26,17 @@ var TrackView = Backbone.View.extend({
 		//combine the values
 		duration = minutes.toString() + ":" + seconds.toString();
 		return duration;
+	},
+
+	shortenTitle: function(title) {
+		
+   		if (title.length > 29) {
+      return title.substring(0,29)+'...';
+   		} else {
+  		return title
+		};
+		return title;
+		console.log(title);
 	}
 
 });
