@@ -71,9 +71,11 @@ var TrackView = Backbone.View.extend({
 		$btn = $(e.currentTarget);
 
     if( $btn.children().children( ".play-show" ).css( "display") == "block" ) {
+    	$btn.css("background-color", "#855d54");
       this.model.play();
     }
     else if ( $btn.children().children( ".pause-show" ).css( "display") == "block" ) {
+    	$btn.css("background-color", "#b39c85");
       this.model.pause();
     }
 

@@ -22,6 +22,7 @@ var Router = Backbone.Router.extend ({
 		$(".header").html( this.headerView.render().el );
 		//$(".main").html( this.categoryNavView .render().el );
 		$(".main-container").html(this.tracksView.el);
+		this.loadGenre("electronic");
 
 		$(".play-show" ).css( "display", "block" );
 		$(".pause-show" ).css( "display", "none" );
